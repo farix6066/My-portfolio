@@ -14,6 +14,11 @@
             --bg-surface: #f8fafc;
             --bg-card: #ffffff;
             --card-border: #e2e8f0;
+            --header-bg: #07090e;
+            --header-text: #f8fafc;
+            --header-muted: #cbd5e1;
+            --header-border: rgba(255, 255, 255, 0.14);
+            --header-btn-bg: #1e293b;
             --text-main: #0f172a;
             --text-muted: #475569;
             --accent: #0284c7;
@@ -31,6 +36,11 @@
             --bg-surface: #0f172a;
             --bg-card: #1e293b;
             --card-border: rgba(255, 255, 255, 0.1);
+            --header-bg: #ffffff;
+            --header-text: #0f172a;
+            --header-muted: #475569;
+            --header-border: #e2e8f0;
+            --header-btn-bg: #f1f5f9;
             --text-main: #f8fafc;
             --text-muted: #94a3b8;
             --accent: #38bdf8;
@@ -88,9 +98,9 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: var(--bg-card);
+            background: var(--header-bg);
             backdrop-filter: blur(16px);
-            border-bottom: 1px solid var(--card-border);
+            border-bottom: 1px solid var(--header-border);
             transition: all 0.4s ease;
         }
 
@@ -98,7 +108,7 @@
             font-family: 'Space Grotesk', sans-serif;
             font-size: 26px;
             font-weight: 700;
-            color: var(--text-main);
+            color: var(--header-text);
             text-decoration: none;
             letter-spacing: -0.5px;
             white-space: nowrap;
@@ -116,7 +126,7 @@
 
         nav a {
             text-decoration: none;
-            color: var(--text-muted);
+            color: var(--header-muted);
             font-weight: 600;
             font-size: 15px;
             transition: color 0.4s ease;
@@ -128,9 +138,9 @@
         }
 
         .nav-btn {
-            background: var(--bg-surface);
-            color: var(--text-main);
-            border: 1px solid var(--card-border);
+            background: var(--header-btn-bg);
+            color: var(--header-text);
+            border: 1px solid var(--header-border);
             padding: 8px 16px;
             border-radius: 20px;
             cursor: pointer;
