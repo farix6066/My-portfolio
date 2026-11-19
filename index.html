@@ -16,8 +16,8 @@
             --card-border: #e2e8f0;
             --header-bg: #07090e;
             --header-text: #f8fafc;
-            --header-muted: #cbd5e1;
-            --header-border: rgba(255, 255, 255, 0.14);
+            --header-muted: #e2e8f0;
+            --header-border: rgba(255, 255, 255, 0.16);
             --header-btn-bg: #1e293b;
             --text-main: #0f172a;
             --text-muted: #475569;
@@ -38,8 +38,8 @@
             --card-border: rgba(255, 255, 255, 0.1);
             --header-bg: #ffffff;
             --header-text: #0f172a;
-            --header-muted: #475569;
-            --header-border: #e2e8f0;
+            --header-muted: #334155;
+            --header-border: #cbd5e1;
             --header-btn-bg: #f1f5f9;
             --text-main: #f8fafc;
             --text-muted: #94a3b8;
@@ -99,12 +99,13 @@
             justify-content: space-between;
             align-items: center;
             background: var(--header-bg);
+            color: var(--header-text);
             backdrop-filter: blur(16px);
             border-bottom: 1px solid var(--header-border);
             transition: all 0.4s ease;
         }
 
-        .logo {
+        header .logo {
             font-family: 'Space Grotesk', sans-serif;
             font-size: 26px;
             font-weight: 700;
@@ -114,17 +115,17 @@
             white-space: nowrap;
         }
 
-        .logo span {
+        header .logo span {
             color: var(--accent);
         }
 
-        nav {
+        header nav {
             display: flex;
             align-items: center;
             gap: 24px;
         }
 
-        nav a {
+        header nav a {
             text-decoration: none;
             color: var(--header-muted);
             font-weight: 600;
@@ -133,11 +134,11 @@
             white-space: nowrap;
         }
 
-        nav a:hover {
+        header nav a:hover {
             color: var(--accent);
         }
 
-        .nav-btn {
+        header .nav-btn {
             background: var(--header-btn-bg);
             color: var(--header-text);
             border: 1px solid var(--header-border);
@@ -153,14 +154,14 @@
             white-space: nowrap;
         }
 
-        .nav-btn:hover {
+        header .nav-btn:hover {
             background: var(--accent);
             color: #ffffff;
             border-color: var(--accent);
             box-shadow: 0 0 15px var(--accent-glow);
         }
 
-        .nav-cta {
+        header .nav-cta {
             background: var(--accent);
             color: #ffffff;
             padding: 10px 20px;
@@ -172,7 +173,7 @@
             white-space: nowrap;
         }
 
-        .nav-cta:hover {
+        header .nav-cta:hover {
             background: var(--accent-hover);
             box-shadow: 0 4px 20px var(--accent-glow);
             transform: translateY(-2px);
@@ -789,28 +790,28 @@
                 flex-wrap: wrap;
                 gap: 10px;
             }
-            .logo {
+            header .logo {
                 font-size: 21px;
             }
-            nav {
+            header nav {
                 width: 100%;
                 gap: 10px;
                 flex-wrap: wrap;
                 justify-content: flex-start;
             }
-            nav a {
+            header nav a {
                 font-size: 13px;
             }
-            .nav-btn {
+            header .nav-btn {
                 padding: 6px 12px;
                 font-size: 12px;
             }
-            .nav-cta {
+            header .nav-cta {
                 padding: 8px 14px;
                 font-size: 12px;
                 margin-left: auto;
             }
-            body.rtl-mode .nav-cta {
+            body.rtl-mode header .nav-cta {
                 margin-left: 0;
                 margin-right: auto;
             }
