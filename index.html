@@ -64,7 +64,7 @@
         }
 
         html {
-            padding-top: 80px; /* Forces page to start below fixed header */
+            padding-top: 80px;
         }
 
         body {
@@ -101,6 +101,7 @@
             color: var(--text-main);
             text-decoration: none;
             letter-spacing: -0.5px;
+            white-space: nowrap;
         }
 
         .logo span {
@@ -119,6 +120,7 @@
             font-weight: 600;
             font-size: 15px;
             transition: color 0.4s ease;
+            white-space: nowrap;
         }
 
         nav a:hover {
@@ -138,6 +140,7 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
+            white-space: nowrap;
         }
 
         .nav-btn:hover {
@@ -156,6 +159,7 @@
             font-weight: 700;
             font-size: 14px;
             transition: all 0.4s ease;
+            white-space: nowrap;
         }
 
         .nav-cta:hover {
@@ -169,6 +173,7 @@
             position: relative;
             width: 100%;
             height: 45vh;
+            min-height: 220px;
             margin: 0;
             overflow: hidden;
             background: var(--bg-surface);
@@ -214,8 +219,8 @@
 
         .hero h1 {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: clamp(40px, 5vw, 64px);
-            line-height: 1.1;
+            font-size: clamp(34px, 5vw, 64px);
+            line-height: 1.12;
             font-weight: 700;
             color: var(--text-main);
             margin-bottom: 24px;
@@ -256,6 +261,7 @@
         .benefit-icon {
             color: var(--accent);
             font-size: 20px;
+            flex-shrink: 0;
         }
 
         .benefit-text {
@@ -310,6 +316,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            gap: 10px;
             margin-bottom: 12px;
         }
 
@@ -330,6 +337,7 @@
             color: #ffffff;
             padding: 4px 10px;
             border-radius: 20px;
+            white-space: nowrap;
         }
 
         .mockup-image-container {
@@ -385,6 +393,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            padding: 20px;
             z-index: 1000;
             opacity: 0;
             pointer-events: none;
@@ -406,8 +415,8 @@
 
         .lightbox-close {
             position: absolute;
-            top: 30px;
-            right: 30px;
+            top: 20px;
+            right: 20px;
             background: var(--accent);
             color: #ffffff;
             border: none;
@@ -438,7 +447,7 @@
         .section-title {
             text-align: center;
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 44px;
+            font-size: clamp(30px, 4vw, 44px);
             margin-bottom: 20px;
             color: var(--text-main);
             letter-spacing: -1px;
@@ -534,6 +543,7 @@
             content: "✦";
             color: var(--accent);
             font-size: 14px;
+            flex-shrink: 0;
         }
 
         /* Portfolio Grid */
@@ -630,7 +640,7 @@
 
         .contact-info h2 {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 40px;
+            font-size: clamp(28px, 3.5vw, 40px);
             margin-bottom: 24px;
             color: var(--text-main);
             letter-spacing: -0.5px;
@@ -663,6 +673,7 @@
             color: var(--text-main);
             text-decoration: none;
             transition: color 0.4s ease;
+            word-break: break-word;
         }
 
         .contact-link-row:hover {
@@ -740,15 +751,131 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            gap: 16px;
         }
 
         @media (max-width: 1024px) {
             .hero, .services-grid, .project-grid, .contact-container {
                 grid-template-columns: 1fr;
             }
+            .hero {
+                gap: 40px;
+                padding: 40px 5% 72px;
+            }
             .contact-container {
                 padding: 40px;
                 gap: 40px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            html {
+                padding-top: 108px;
+            }
+            header {
+                height: auto;
+                min-height: 100px;
+                padding: 12px 4%;
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+            .logo {
+                font-size: 21px;
+            }
+            nav {
+                width: 100%;
+                gap: 10px;
+                flex-wrap: wrap;
+                justify-content: flex-start;
+            }
+            nav a {
+                font-size: 13px;
+            }
+            .nav-btn {
+                padding: 6px 12px;
+                font-size: 12px;
+            }
+            .nav-cta {
+                padding: 8px 14px;
+                font-size: 12px;
+                margin-left: auto;
+            }
+            body.rtl-mode .nav-cta {
+                margin-left: 0;
+                margin-right: auto;
+            }
+            .video-container {
+                height: 28vh;
+                min-height: 180px;
+            }
+            .hero {
+                padding: 28px 4% 56px;
+                gap: 32px;
+            }
+            .hero .subtitle {
+                font-size: 16px;
+                margin-bottom: 24px;
+            }
+            .hero-benefits {
+                grid-template-columns: 1fr;
+                gap: 12px;
+                margin-bottom: 24px;
+            }
+            .benefit-item {
+                padding: 12px 14px;
+            }
+            .btn-primary {
+                width: 100%;
+                text-align: center;
+                padding: 15px 24px;
+            }
+            section {
+                padding: 56px 4%;
+            }
+            .section-subtitle {
+                font-size: 15px;
+                margin-bottom: 36px;
+            }
+            .service-card {
+                padding: 24px;
+                border-radius: 16px;
+            }
+            .service-card h3 {
+                font-size: 22px;
+            }
+            .project-img-container {
+                height: 210px;
+            }
+            .project-content {
+                padding: 24px;
+            }
+            .contact-container {
+                padding: 24px 18px;
+                gap: 28px;
+                border-radius: 20px;
+            }
+            .contact-link-row {
+                font-size: 16px;
+                gap: 12px;
+            }
+            .form-group {
+                margin-bottom: 18px;
+            }
+            .form-group input, .form-group textarea, .form-group select {
+                padding: 14px;
+                font-size: 15px;
+            }
+            .submit-btn {
+                padding: 16px 24px;
+                font-size: 16px;
+            }
+            footer {
+                padding: 32px 4%;
+            }
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 8px;
             }
         }
     </style>
